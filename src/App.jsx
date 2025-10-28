@@ -1,23 +1,4 @@
-import React, { useState } from "react";
-import {
-  TrendingUp,
-  TrendingDown,
-  Search,
-  RefreshCw,
-  Download,
-  Filter,
-} from "lucide-react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-} from "recharts";
+import { useState } from "react";
 import {
   AppsTab,
   DashboardHeader,

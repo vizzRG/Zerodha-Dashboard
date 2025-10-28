@@ -1,4 +1,3 @@
-import React from "react";
 import { ordersData } from "../../utils/data";
 
 const OrdersTab = () => {

@@ -1,4 +1,3 @@
-import React from "react";
 import { watchlist } from "../../utils/data";
 
 const Sidebar = () => {
@@ -29,7 +28,7 @@ const Sidebar = () => {
         <div className="relative">
           <input
             type="text"
-            placeholder="Search eg: infy, banknifty, futidx, index fund, e..."
+            placeholder="Search eg: infy, banknifty, fund, e..."
             className="w-full px-3 py-2 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
           />
           <span className="absolute right-3 top-2 text-xs text-gray-400">

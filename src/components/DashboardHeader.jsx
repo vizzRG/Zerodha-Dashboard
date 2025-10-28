@@ -1,5 +1,3 @@
-import React from "react";
-
 const DashboardHeader = ({ activeNav, setActiveNav }) => {
   return (
     <div className="h-14 border-b border-gray-200 flex items-center justify-between px-6 bg-white">

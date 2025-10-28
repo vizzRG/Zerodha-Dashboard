@@ -1,4 +1,3 @@
-import React from "react";
 import { holdingsPieData } from "../../utils/data";
 
 const DashboardTab = () => {

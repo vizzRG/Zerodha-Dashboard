@@ -1,5 +1,3 @@
-import React from "react";
-
 const FundsTab = () => {
   return (
     <div className="flex-1 overflow-y-auto bg-gray-50 p-6">

@@ -1,4 +1,3 @@
-import React from "react";
 import { positionsData } from "../../utils/data";
 
 const PositionsTab = () => {
