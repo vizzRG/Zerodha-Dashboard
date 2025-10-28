@@ -6,8 +6,9 @@ const OrdersTab = () => {
       <div className="p-6">
         <h2 className="text-xl font-light text-gray-800 mb-6">Orders</h2>
 
-        <div className="border border-gray-200 rounded overflow-hidden">
-          <table className="w-full">
+        {/* Desktop Table */}
+        <div className="hidden md:block border border-gray-200 rounded overflow-x-auto">
+          <table className="min-w-full text-sm">
             <thead className="bg-gray-50 text-xs text-gray-600">
               <tr>
                 <th className="text-left p-3 font-medium">Time</th>
@@ -52,6 +53,57 @@ const OrdersTab = () => {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* ✅ Mobile Card Layout */}
+        <div className="md:hidden space-y-4">
+          {ordersData.map((order, idx) => (
+            <div
+              key={idx}
+              className="border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="flex justify-between items-center mb-2">
+                <p
+                  className={`font-semibold ${
+                    order.type === "BUY" ? "text-blue-600" : "text-red-600"
+                  }`}
+                >
+                  {order.type}
+                </p>
+                <p className="text-xs text-gray-500">{order.time}</p>
+              </div>
+
+              <p className="text-blue-600 font-medium mb-1">
+                {order.instrument}
+              </p>
+
+              <div className="grid grid-cols-2 text-sm text-gray-600 gap-y-1">
+                <span>Qty:</span>
+                <span className="text-right font-medium text-gray-800">
+                  {order.qty}
+                </span>
+
+                <span>Price:</span>
+                <span className="text-right font-medium text-gray-800">
+                  ₹{order.price}
+                </span>
+
+                <span>Product:</span>
+                <span className="text-right text-gray-800">
+                  {order.product}
+                </span>
+
+                <span>Status:</span>
+                <span className="text-right">
+                  <span
+                    className={`px-2 py-1 rounded text-xs font-medium ${order.statusClass}`}
+                  >
+                    {order.status}
+                  </span>
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

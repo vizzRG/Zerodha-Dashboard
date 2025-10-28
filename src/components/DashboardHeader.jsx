@@ -17,6 +17,7 @@ const DashboardHeader = ({ activeNav, setActiveNav }) => {
       <div className="flex items-center gap-2">
         <div className="text-red-500 text-2xl font-bold">
           <img
+            onClick={() => setActiveNav("Dashboard")}
             src="https://kite.zerodha.com/static/images/kite-logo.svg"
             height={24}
             width={24}

@@ -300,13 +300,13 @@ export const holdingsPieData = [
   { name: "Others", value: 1500, fill: "#6b7280" },
 ];
 
-//export const profitData = [
-//   { date: "21", value: 150 },
-//   { date: "22", value: 200 },
-//   { date: "23", value: 180 },
-//   { date: "24", value: 250 },
-//   { date: "25", value: 220 },
-// ];
+export const profitData = [
+  { date: "21", value: 150 },
+  { date: "22", value: 200 },
+  { date: "23", value: 180 },
+  { date: "24", value: 250 },
+  { date: "25", value: 220 },
+];
 
 export const totalPnL = holdingsData.reduce((sum, h) => sum + h.pnl, 0);
 export const totalCurrentValue = holdingsData.reduce(

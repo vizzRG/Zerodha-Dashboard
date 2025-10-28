@@ -14,7 +14,7 @@ const HoldingsTab = () => {
           <h2 className="text-xl font-light text-gray-800">
             Holdings ({holdingsData.length})
           </h2>
-          <div className="flex gap-3 text-sm">
+          <div className="flex md:flex-row flex-col gap-3 text-sm">
             <button className="flex items-center gap-2 px-4 py-2 text-blue-600 hover:bg-blue-50 rounded">
               <RefreshCw size={16} />
               Authorise
@@ -27,7 +27,7 @@ const HoldingsTab = () => {
         </div>
 
         {/* Summary Cards */}
-        <div className="grid grid-cols-4 gap-4 mb-6">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1  gap-4 mb-6">
           <div className="bg-gray-50 p-4 rounded">
             <div className="text-xs text-gray-500 mb-1">Total investment</div>
             <div className="text-xl font-semibold text-gray-800">
@@ -71,10 +71,10 @@ const HoldingsTab = () => {
           </div>
         </div>
 
-        {/* Holdings Table */}
-        <div className="border border-gray-200 rounded overflow-hidden">
-          <table className="w-full">
-            <thead className="bg-gray-50 text-xs text-gray-600">
+        {/*  Desktop Table */}
+        <div className="hidden md:block border border-gray-200 rounded overflow-x-auto overflow-y-auto max-h-[70vh]">
+          <table className="min-w-[800px] w-full text-sm">
+            <thead className="bg-gray-50 text-xs text-gray-600 sticky top-0">
               <tr>
                 <th className="text-left p-3 font-medium">Instrument</th>
                 <th className="text-right p-3 font-medium">Qty.</th>
@@ -141,6 +141,76 @@ const HoldingsTab = () => {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/*  Mobile Card View */}
+        <div className="md:hidden space-y-4">
+          {holdingsData.map((holding, idx) => (
+            <div
+              key={idx}
+              className="border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="flex justify-between items-center mb-2">
+                <p className="text-blue-600 font-medium">
+                  {holding.instrument}
+                </p>
+                <p className="text-xs text-gray-500">Qty: {holding.qty}</p>
+              </div>
+
+              <div className="grid grid-cols-2 text-sm text-gray-600 gap-y-1">
+                <span>Avg. Cost:</span>
+                <span className="text-right font-medium text-gray-800">
+                  {holding.avgCost.toFixed(2)}
+                </span>
+
+                <span>LTP:</span>
+                <span className="text-right font-medium text-gray-800">
+                  {holding.ltp.toFixed(2)}
+                </span>
+
+                <span>Current Value:</span>
+                <span className="text-right font-medium text-gray-800">
+                  {holding.currentValue.toFixed(2)}
+                </span>
+
+                <span>P&L:</span>
+                <span
+                  className={`text-right font-medium ${
+                    holding.pnl >= 0 ? "text-green-600" : "text-red-600"
+                  }`}
+                >
+                  {holding.pnl >= 0 ? "+" : ""}
+                  {holding.pnl.toFixed(2)}
+                </span>
+
+                <span>Net Chg:</span>
+                <span
+                  className={`text-right ${
+                    holding.netChg.includes("+")
+                      ? "text-green-600"
+                      : holding.netChg.includes("-")
+                      ? "text-red-600"
+                      : "text-gray-600"
+                  }`}
+                >
+                  {holding.netChg}
+                </span>
+
+                <span>Day Chg:</span>
+                <span
+                  className={`text-right ${
+                    holding.dayChg.includes("+")
+                      ? "text-green-600"
+                      : holding.dayChg.includes("-")
+                      ? "text-red-600"
+                      : "text-gray-600"
+                  }`}
+                >
+                  {holding.dayChg}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
