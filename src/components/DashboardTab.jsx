@@ -9,10 +9,10 @@ const DashboardTab = () => {
         </h1>
 
         {/* Equity & Commodity Cards */}
-        <div className="grid grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="bg-white rounded border border-gray-200 p-6">
             <h3 className="text-sm text-gray-600 mb-4">Equity</h3>
-            <div className="flex justify-between items-start">
+            <div className="flex  justify-between items-start">
               <div>
                 <div className="text-4xl font-light text-gray-800 mb-1">
                   10.21L

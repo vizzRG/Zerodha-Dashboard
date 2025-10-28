@@ -2,7 +2,7 @@ import { watchlist } from "../../utils/data";
 
 const Sidebar = () => {
   return (
-    <div className="w-80 border-r border-gray-200 flex flex-col bg-white">
+    <div className="w-80 border-r border-gray-200 lg:flex flex-col bg-white hidden">
       {/* Market Indices */}
       <div className="px-4 py-3 border-b border-gray-200">
         <div className="flex items-center justify-between mb-3">
