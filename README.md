@@ -21,7 +21,7 @@ Make sure you have **Node.js (>= 18)** and **npm** or **yarn** installed.
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/zerodha-dashboard-ui.git
+git clone https://github.com/vizzRG/Zerodha-Dashboard.git
 
 # Navigate to the project directory
 cd zerodha-dashboard-ui
